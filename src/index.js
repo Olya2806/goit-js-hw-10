@@ -28,15 +28,18 @@ function onSearchCountryInput(e) {
                 Notiflix.Notify.warning('Too many matches found. Please enter a more specific name.');
                 coutryListEl.innerHTML = ""
                 wantedCounrtyInfoBox.innerHTML = '';
+                return
             }
             if (data.length <= 10 || data.length >= 2) {
                 coutryListEl.innerHTML = createCountryList(data);
-            console.log(data);
+                console.log(data);
+                return
             }
             if (data.length === 1) {
                 console.log(data)
                 wantedCounrtyInfoBox.innerHTML = createWantedCountryInfo(data); 
                 coutryListEl.innerHTML = '';
+                return
             } 
             
         }).catch((error) => {
@@ -53,7 +56,7 @@ function createCountryList(countries) {
     </li>`).join("");
 }
 
-function createWantedCountryInfo(country) {
+function createWantedCountryInfo(countries) {
     return countries.map((country) => `<ul class="one-country-info">
     <li class="one-country-main-info"><img src="${country.flags.svg}" alt="Flag" class="one-country-img" width="50"/><p>${country.name.official}</p></li>
     <li class="one-country-item"><p><span class="one-country-text">Capital:</span> ${country.capital}</p></li>
