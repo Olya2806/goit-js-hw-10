@@ -1,7 +1,7 @@
 import debounce from 'lodash.debounce';
 import Notiflix from 'notiflix';
 import './css/styles.css';
-import fetchCountries from './fetchCountries.js';
+import {fetchCountries} from './fetchCountries.js';
 
 const inputEl = document.querySelector('#search-box');
 const coutryListEl = document.querySelector('.country-list');
@@ -44,10 +44,13 @@ function onSearchCountryInput(e) {
             } 
             
         }).catch((error) => {
-            console.log(error);
-            Notiflix.Notify.failure('Oops, there is no country with that name');
-            coutryListEl.innerHTML = ""
+            coutryListEl.innerHTML = "";
             wantedCounrtyInfoBox.innerHTML = '';
+            if(error.message === "404") {
+                inputEl.value = ""
+                return Notiflix.Notify.failure('Oops, there is no country with that name');
+            }
+            console.log(error);
     })
 }
 
