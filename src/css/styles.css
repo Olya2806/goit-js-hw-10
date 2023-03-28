@@ -11,7 +11,7 @@ body {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
+  background-color: #b2d9ed;
   color: #212121;
   line-height: 1.5;
 }
@@ -39,7 +39,7 @@ body {
   max-width: 350px;
   align-items: center;
   box-shadow: 10px 10px 28px -10px #212121;
-
+  background-color: #edf2f4;
 }
 
 .one-country-info {
@@ -48,6 +48,7 @@ body {
   max-width: 350px;
   padding: 15px 25px;
   box-shadow: 10px 10px 28px -10px #212121;
+  background-color: #edf2f4;
 }
 
 .one-country-main-info {
@@ -56,6 +57,7 @@ body {
   align-items: center;
   font-size: large;
   font-weight: 600;
+  
 }
 
 .one-country-text {
